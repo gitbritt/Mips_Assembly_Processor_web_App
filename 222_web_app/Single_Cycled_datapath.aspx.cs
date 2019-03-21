@@ -20,7 +20,7 @@ namespace _222_web_app
             //Get random function
             try
             {
-                string[] register_array = { "$t0", "$t1", "$t2", "$t3", "$t4", "$t5", "$t6", "$t7", "$t8", "$t9", "$s0", "$s1", "$s2", "$s3", "$s3", "$s4", "$s5", "$s6", "$s7" };
+                string[] register_array = { "$t0", "$t1", "$t2", "$t3", "$t4", "$t5", "$t6", "$t7", "$t8", "$t9", "$s0", "$s1", "$s2", "$s3", "$s3", "$s4", "$s5", "$s6", "$s7", "$ra" };
                 int rs = 0;
                 int rt = 0;
                 int rd = 0;
@@ -28,6 +28,7 @@ namespace _222_web_app
                 int immediate = 0;
                 int register_array_length = register_array.Length;
                 int address = 0;
+                int Branch_Address = 0;
                 Random operation = new Random();
                 int operation_row_file = operation.Next(2, 27);
                 string home_path = Server.MapPath("/").ToString();
@@ -37,7 +38,7 @@ namespace _222_web_app
                 string hex_address = "";
                 ////Type R instructions
                 ///
-                if (operation_str[1] == "R" && operation_str[0] != "JR")
+                if (operation_str[1] == "R")
                 {
                     rs = operation.Next(0, register_array_length);
                     rt = operation.Next(0, register_array_length);
@@ -45,7 +46,12 @@ namespace _222_web_app
                     if(operation_str[0] == "SRL" || operation_str[0] == "SLL")
                     {
                         shamt = operation.Next(0, 10);
-                        instruction = operation_str[0] + " " + register_array[rs] + ", " + register_array[rt] + shamt;
+                        instruction = operation_str[0] + " " + register_array[rs] + ", " + register_array[rt] + ", " + shamt;
+                    }
+                    else if(operation_str[0] == "JR")
+                    {
+
+                        instruction = operation_str[0] + " " + register_array[19];
                     }
                     else
                         instruction = operation_str[0] + " " + register_array[rs] + ", " + register_array[rt] + ", " + register_array[rd];
@@ -59,17 +65,28 @@ namespace _222_web_app
                     instruction = operation_str[0];
                     rs = operation.Next(0, register_array_length);
                     rt = operation.Next(0, register_array_length);
+                    //// Load/Store 
                     if (instruction == "SB" || instruction == "SW" || instruction == "LW" || instruction == "LUI" || instruction == "LB" || instruction == "LUBI" || instruction == "LUB")
                     {
                         instruction = instruction + " " + register_array[rs] + ", " + immediate + "( " + register_array[rt] + " )";
                     }
+                    ////Branches
+                    ///
+                    else if(operation_str[0] == "BNE" || operation_str[0] == "BEQ")
+                    {
+                        Branch_Address = operation.Next(0, 65535);
+                        hex_address = Branch_Address.ToString("X");
+                        instruction = instruction + " " + register_array[rs] + ", " + register_array[rt] + ", " + "0x" + hex_address;
+                    }
+                    ////All other type of instructions
+                    ///
                     else
                         instruction = instruction + " " + register_array[rs] + ", " + register_array[rt] + ", " + immediate;
                     
                 }
                 ////Type J instructions
                 ///
-                else if(operation_str[0] == "J" || operation_str[0] == "JR")
+                else if(operation_str[0] == "J")
                 {
                     address = operation.Next(0, 8388607);
                     hex_address = address.ToString("X");
@@ -78,9 +95,21 @@ namespace _222_web_app
                     
                 }
                 //Append HTML to add instruction
-                
                 Instruction_html.InnerText = instruction;
 
+                ////Set Correct Answer
+                ///
+                Answer ans = new Answer();
+                ans.Control_Signals(instruction, rs, rt, rd, shamt, operation_str[2], operation_str[3], operation_str[0], operation_str[1]);
+
+                test0.InnerText = ans.RegDst;
+                test1.InnerText = ans.ALUSrc;
+                test2.InnerText = ans.MemToReg;
+                test3.InnerText = ans.RegWrite;
+                test4.InnerText = ans.MemRead;
+                test5.InnerText = ans.MemWrite;
+                test6.InnerText = ans.Branch;
+                test7.InnerText = ans.Jump;
             }
             catch(Exception ex)
             {
