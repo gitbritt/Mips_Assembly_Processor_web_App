@@ -32,10 +32,14 @@ namespace _222_web_app
                 Random operation = new Random();
                 int operation_row_file = operation.Next(2, 27);
                 string home_path = Server.MapPath("/").ToString();
-                string row = File.ReadLines(home_path + "/Register_file/instructions.csv").Skip(operation_row_file - 1).Take(1).First();
+                string reg_file_path = home_path + "/Register_file/";
+                string row = File.ReadLines(reg_file_path + "instructions.csv").Skip(operation_row_file - 1).Take(1).First();
                 string[] operation_str = row.Split(',');
                 string instruction = "";
                 string hex_address = "";
+                string rs_reg = "";
+                string rt_reg = "";
+                string rd_reg = "";
                 ////Type R instructions
                 ///
                 if (operation_str[1] == "R")
@@ -43,10 +47,13 @@ namespace _222_web_app
                     rs = operation.Next(0, register_array_length);
                     rt = operation.Next(0, register_array_length);
                     rd = operation.Next(0, register_array_length);
+                    rs_reg = register_array[rs];
+                    rt_reg = register_array[rt];
+                    rd_reg = register_array[rd];
                     if(operation_str[0] == "SRL" || operation_str[0] == "SLL")
                     {
                         shamt = operation.Next(0, 10);
-                        instruction = operation_str[0] + " " + register_array[rs] + ", " + register_array[rt] + ", " + shamt;
+                        instruction = operation_str[0] + " " + rs_reg + ", " + rt_reg + ", " + shamt;
                     }
                     else if(operation_str[0] == "JR")
                     {
@@ -54,7 +61,7 @@ namespace _222_web_app
                         instruction = operation_str[0] + " " + register_array[19];
                     }
                     else
-                        instruction = operation_str[0] + " " + register_array[rs] + ", " + register_array[rt] + ", " + register_array[rd];
+                        instruction = operation_str[0] + " " + rs_reg + ", " + rt_reg + ", " + rd_reg;
                     
                 }
                 ///Type I instructions
@@ -65,10 +72,12 @@ namespace _222_web_app
                     instruction = operation_str[0];
                     rs = operation.Next(0, register_array_length);
                     rt = operation.Next(0, register_array_length);
+                    rs_reg = register_array[rs];
+                    rt_reg = register_array[rt];
                     //// Load/Store 
                     if (instruction == "SB" || instruction == "SW" || instruction == "LW" || instruction == "LUI" || instruction == "LB" || instruction == "LUBI" || instruction == "LUB")
                     {
-                        instruction = instruction + " " + register_array[rs] + ", " + immediate + "( " + register_array[rt] + " )";
+                        instruction = instruction + " " + rs_reg + ", " + immediate + "( " + rt_reg + " )";
                     }
                     ////Branches
                     ///
@@ -81,7 +90,7 @@ namespace _222_web_app
                     ////All other type of instructions
                     ///
                     else
-                        instruction = instruction + " " + register_array[rs] + ", " + register_array[rt] + ", " + immediate;
+                        instruction = instruction + " " + rs_reg + ", " + rt_reg + ", " + immediate;
                     
                 }
                 ////Type J instructions
@@ -101,21 +110,27 @@ namespace _222_web_app
                 ///
                 Answer ans = new Answer();
                 ans.Control_Signals(instruction, rs, rt, rd, shamt, operation_str[2], operation_str[3], operation_str[0], operation_str[1]);
-
-                test0.InnerText = ans.RegDst;
-                test1.InnerText = ans.ALUSrc;
-                test2.InnerText = ans.MemToReg;
-                test3.InnerText = ans.RegWrite;
-                test4.InnerText = ans.MemRead;
-                test5.InnerText = ans.MemWrite;
-                test6.InnerText = ans.Branch;
-                test7.InnerText = ans.Jump;
+                ans.Data_Signal(operation_str, rs_reg, rt_reg, rd_reg, shamt, immediate, reg_file_path);
             }
             catch(Exception ex)
             {
                 Instruction_html.InnerText = ex.Message;
                 System.Diagnostics.Debug.WriteLine(ex.Message);
             }
+        }
+
+        protected void Submit_Answers_Click(object sender, EventArgs e)
+        {
+            Answer ans = new Answer();
+            test0.InnerText = Answer.RegDst;
+            test1.InnerText = Answer.ALUSrc;
+            test2.InnerText = Answer.MemToReg;
+            test3.InnerText = Answer.RegWrite;
+            test4.InnerText = Answer.MemRead;
+            test5.InnerText = Answer.MemWrite;
+            test6.InnerText = Answer.Branch;
+            test7.InnerText = Answer.Jump;
+
         }
     }
 }
