@@ -463,7 +463,7 @@ EN-US;mso-bidi-language:AR-SA">
   double windowtext 1.5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
   solid windowtext .5pt;mso-border-top-alt:double windowtext 1.5pt;padding:
   0in 5.4pt 0in 5.4pt; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" class="auto-style2">
-                    <p align="center" class="MsoNormal" style="text-align: left" id="test0" runat ="server">
+                    <p align="center" class="MsoNormal" style="text-align: left" id="AnswerRegDst" runat ="server">
                         <o:p>&nbsp;</o:p></p>
                 </td>
             </tr>
@@ -478,7 +478,7 @@ EN-US;mso-bidi-language:AR-SA">
   solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:
   solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
   solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" class="auto-style2">
-                    <p align="center" class="MsoNormal" style="text-align: left" id="test1" runat ="server">
+                    <p align="center" class="MsoNormal" style="text-align: left" id="AnswerALUSrc" runat ="server">
                         &nbsp;</p>
                 </td>
             </tr>
@@ -492,7 +492,7 @@ EN-US;mso-bidi-language:AR-SA">
                 <td style="border-bottom:
   solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:
   solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
-  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" class="auto-style3" id="test2" runat ="server">
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" class="auto-style3" id="AnswerMemtoReg" runat ="server">
                     &nbsp;</td>
             </tr>
             <tr style="mso-yfti-irow:4;height:.3in">
@@ -505,7 +505,7 @@ EN-US;mso-bidi-language:AR-SA">
                 <td style="border-bottom:
   solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:
   solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
-  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" class="auto-style3" id="test3" runat ="server">
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" class="auto-style3" id="AnswerRegWrite" runat ="server">
                     &nbsp;</td>
             </tr>
             <tr style="mso-yfti-irow:5;height:.3in">
@@ -518,7 +518,7 @@ EN-US;mso-bidi-language:AR-SA">
                 <td style="border-bottom:
   solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:
   solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
-  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" class="auto-style3" id="test4" runat ="server">
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" class="auto-style3" id="AnswerMemRead" runat ="server">
                     &nbsp;</td>
             </tr>
             <tr style="mso-yfti-irow:6;height:.3in">
@@ -531,7 +531,7 @@ EN-US;mso-bidi-language:AR-SA">
                 <td style="border-bottom:
   solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:
   solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
-  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" class="auto-style3" id="test5" runat ="server">
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" class="auto-style3" id="AnswerMemWrite" runat ="server">
                     &nbsp;</td>
             </tr>
             <tr style="mso-yfti-irow:7;height:.3in">
@@ -545,7 +545,7 @@ EN-US;mso-bidi-language:AR-SA">
   solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:
   solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
   solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" class="auto-style2">
-                    <p align="center" class="MsoNormal" style="text-align: left" id="test6" runat ="server">
+                    <p align="center" class="MsoNormal" style="text-align: left" id="AnswerBranch" runat ="server">
                         &nbsp;</p>
                 </td>
             </tr>
@@ -559,7 +559,155 @@ EN-US;mso-bidi-language:AR-SA">
                 <td style="border-bottom:
   solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:
   solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
-  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" class="auto-style3" id="test7" runat ="server">
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" class="auto-style3" id="AnswerJump" runat ="server">
+                    &nbsp;</td>
+            </tr>
+        </table>
+    </div>
+    <p class="MsoNormal">
+        <o:p>&nbsp;</o:p></p>
+    <div align="center">
+        <table border="1" cellpadding="0" cellspacing="0" class="MsoNormalTable" style="border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-yfti-tbllook:480;mso-padding-alt:0in 5.4pt 0in 5.4pt;mso-border-insideh:
+ .5pt solid windowtext;mso-border-insidev:.5pt solid windowtext">
+            <tr style="mso-yfti-irow:0;mso-yfti-firstrow:yes;height:.3in">
+                <td style="width:1.8in;border:solid windowtext 1.0pt;border-bottom:
+  double windowtext 1.5pt;mso-border-alt:solid windowtext .5pt;mso-border-bottom-alt:
+  double windowtext 1.5pt;padding:0in 5.4pt 0in 5.4pt;height:.3in" width="173">
+                    <p align="center" class="MsoNormal">
+                        <b style="mso-bidi-font-weight:normal">Data Signal<o:p></o:p></b></p>
+                </td>
+                <td style="width:2.8in;border-top:solid windowtext 1.0pt;
+  border-left:none;border-bottom:double windowtext 1.5pt;border-right:solid windowtext 1.0pt;
+  mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  mso-border-bottom-alt:double windowtext 1.5pt;padding:0in 5.4pt 0in 5.4pt;
+  height:.3in" width="269">
+                    <p align="center" class="MsoNormal">
+                        <b style="mso-bidi-font-weight:normal">Value<br />
+                        <i style="mso-bidi-font-style:normal">(32-bit values in Hex and<br />
+                        all other values in binary)</i><o:p></o:p></b></p>
+                </td>
+            </tr>
+            <tr style="mso-yfti-irow:1;height:.3in">
+                <td style="width:1.8in;border:solid windowtext 1.0pt;border-top:
+  none;mso-border-top-alt:double windowtext 1.5pt;mso-border-alt:solid windowtext .5pt;
+  mso-border-top-alt:double windowtext 1.5pt;padding:0in 5.4pt 0in 5.4pt;
+  height:.3in" width="173">
+                    <p class="MsoNormal">
+                        Read Register 1<o:p></o:p></p>
+                </td>
+                <td style="width:2.8in;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:
+  double windowtext 1.5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;mso-border-top-alt:double windowtext 1.5pt;padding:
+  0in 5.4pt 0in 5.4pt;height:.3in" width="269" id="AnswerReadReg1" runat ="server">
+                    &nbsp;</td>
+            </tr>
+            <tr style="mso-yfti-irow:2;height:.3in">
+                <td style="width:1.8in;border:solid windowtext 1.0pt;border-top:
+  none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:.3in" width="173">
+                    <p class="MsoNormal">
+                        Read Register 2<o:p></o:p></p>
+                </td>
+                <td style="width:2.8in;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:
+  solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;height:.3in" width="269" id="AnswerReadReg2"  runat ="server">
+                    &nbsp;</td>
+            </tr>
+            <tr style="mso-yfti-irow:3;height:.3in">
+                <td style="width:1.8in;border:solid windowtext 1.0pt;border-top:
+  none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:.3in" width="173">
+                    <p class="MsoNormal">
+                        Write Register<o:p></o:p></p>
+                </td>
+                <td style="width:2.8in;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:
+  solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;height:.3in" width="269" id="AnswerWriteReg" runat="server">
+                    &nbsp;</td>
+            </tr>
+            <tr style="mso-yfti-irow:4;height:.3in">
+                <td style="width:1.8in;border:solid windowtext 1.0pt;border-top:
+  none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:.3in" width="173">
+                    <p class="MsoNormal">
+                        Read Data 1<o:p></o:p></p>
+                </td>
+                <td style="width:2.8in;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:
+  solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;height:.3in" width="269">
+                    <p class="MsoNormal" id="AnswerReadData1"  runat ="server">
+                        <o:p>&nbsp;</o:p></p>
+                </td>
+            </tr>
+            <tr style="mso-yfti-irow:5;height:.3in">
+                <td style="width:1.8in;border:solid windowtext 1.0pt;border-top:
+  none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:.3in" width="173">
+                    <p class="MsoNormal">
+                        Read Data 2<o:p></o:p></p>
+                </td>
+                <td style="width:2.8in;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:
+  solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;height:.3in" width="269" id="AnswerReadData2" runat="server">
+                    &nbsp;</td>
+            </tr>
+            <tr style="mso-yfti-irow:6;height:.3in">
+                <td style="width:1.8in;border:solid windowtext 1.0pt;border-top:
+  none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:.3in" width="173">
+                    <p class="MsoNormal">
+                        Sign Ext. Immediate <o:p></o:p>
+                    </p>
+                </td>
+                <td style="width:2.8in;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:
+  solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;height:.3in" width="269" id="AnswerSignImmediate" runat="server">
+                    &nbsp;</td>
+            </tr>
+            <tr style="mso-yfti-irow:7;height:.3in">
+                <td style="width:1.8in;border:solid windowtext 1.0pt;border-top:
+  none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:.3in" width="173">
+                    <p class="MsoNormal">
+                        ALU Operation<o:p></o:p></p>
+                </td>
+                <td style="width:2.8in;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:
+  solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;height:.3in" width="269" id="AnswerALUOperation" runat="server">
+                    &nbsp;</td>
+            </tr>
+            <tr style="mso-yfti-irow:8;height:.3in">
+                <td style="width:1.8in;border:solid windowtext 1.0pt;border-top:
+  none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:.3in" width="173">
+                    <p class="MsoNormal">
+                        ALU Result<o:p></o:p></p>
+                </td>
+                <td style="width:2.8in;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:
+  solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;height:.3in" width="269" id="AnswerALUResult"  runat ="server">
+                    &nbsp;</td>
+            </tr>
+            <tr style="mso-yfti-irow:9;mso-yfti-lastrow:yes;height:.3in">
+                <td style="width:1.8in;border:solid windowtext 1.0pt;border-top:
+  none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:.3in" width="173">
+                    <p class="MsoNormal">
+                        Register Write Data<o:p></o:p></p>
+                </td>
+                <td style="width:2.8in;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:
+  solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;height:.3in" width="269" id="AnswerRegWriteData"  runat ="server">
                     &nbsp;</td>
             </tr>
         </table>

@@ -122,15 +122,24 @@ namespace _222_web_app
         protected void Submit_Answers_Click(object sender, EventArgs e)
         {
             Answer ans = new Answer();
-            test0.InnerText = Answer.RegDst;
-            test1.InnerText = Answer.ALUSrc;
-            test2.InnerText = Answer.MemToReg;
-            test3.InnerText = Answer.RegWrite;
-            test4.InnerText = Answer.MemRead;
-            test5.InnerText = Answer.MemWrite;
-            test6.InnerText = Answer.Branch;
-            test7.InnerText = Answer.Jump;
+            AnswerRegDst.InnerText = Answer.RegDst;
+            AnswerALUSrc.InnerText = Answer.ALUSrc;
+            AnswerMemtoReg.InnerText = Answer.MemToReg;
+            AnswerRegWrite.InnerText = Answer.RegWrite;
+            AnswerMemRead.InnerText = Answer.MemRead;
+            AnswerMemWrite.InnerText = Answer.MemWrite;
+            AnswerBranch.InnerText = Answer.Branch;
+            AnswerJump.InnerText = Answer.Jump;
 
+            AnswerReadReg1.InnerText = Answer.Read_Register_1;
+            AnswerReadReg2.InnerText = Answer.Read_Register_2;
+            AnswerWriteReg.InnerText = Answer.Write_Register;
+            AnswerReadData1.InnerText = Answer.Read_Data_1;
+            AnswerReadData2.InnerText = Answer.Read_Data_2;
+            AnswerSignImmediate.InnerText = Answer.Sign_Ext_Immediate;
+            AnswerALUOperation.InnerText = Answer.ALU_Operation;
+            AnswerALUResult.InnerText = Answer.ALU_Result;
+            AnswerRegWriteData.InnerText = Answer.Register_Write_Data;
         }
     }
 }

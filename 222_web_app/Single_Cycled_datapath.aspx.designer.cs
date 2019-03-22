@@ -202,75 +202,156 @@ namespace _222_web_app {
         protected global::System.Web.UI.WebControls.Button Submit_Answers;
         
         /// <summary>
-        /// test0 control.
+        /// AnswerRegDst control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl test0;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl AnswerRegDst;
         
         /// <summary>
-        /// test1 control.
+        /// AnswerALUSrc control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl test1;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl AnswerALUSrc;
         
         /// <summary>
-        /// test2 control.
+        /// AnswerMemtoReg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTableCell test2;
+        protected global::System.Web.UI.HtmlControls.HtmlTableCell AnswerMemtoReg;
         
         /// <summary>
-        /// test3 control.
+        /// AnswerRegWrite control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTableCell test3;
+        protected global::System.Web.UI.HtmlControls.HtmlTableCell AnswerRegWrite;
         
         /// <summary>
-        /// test4 control.
+        /// AnswerMemRead control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTableCell test4;
+        protected global::System.Web.UI.HtmlControls.HtmlTableCell AnswerMemRead;
         
         /// <summary>
-        /// test5 control.
+        /// AnswerMemWrite control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTableCell test5;
+        protected global::System.Web.UI.HtmlControls.HtmlTableCell AnswerMemWrite;
         
         /// <summary>
-        /// test6 control.
+        /// AnswerBranch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl test6;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl AnswerBranch;
         
         /// <summary>
-        /// test7 control.
+        /// AnswerJump control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTableCell test7;
+        protected global::System.Web.UI.HtmlControls.HtmlTableCell AnswerJump;
+        
+        /// <summary>
+        /// AnswerReadReg1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTableCell AnswerReadReg1;
+        
+        /// <summary>
+        /// AnswerReadReg2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTableCell AnswerReadReg2;
+        
+        /// <summary>
+        /// AnswerWriteReg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTableCell AnswerWriteReg;
+        
+        /// <summary>
+        /// AnswerReadData1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl AnswerReadData1;
+        
+        /// <summary>
+        /// AnswerReadData2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTableCell AnswerReadData2;
+        
+        /// <summary>
+        /// AnswerSignImmediate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTableCell AnswerSignImmediate;
+        
+        /// <summary>
+        /// AnswerALUOperation control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTableCell AnswerALUOperation;
+        
+        /// <summary>
+        /// AnswerALUResult control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTableCell AnswerALUResult;
+        
+        /// <summary>
+        /// AnswerRegWriteData control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTableCell AnswerRegWriteData;
     }
 }

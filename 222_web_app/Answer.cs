@@ -116,7 +116,7 @@ namespace _222_web_app
                 row++;
                 
             }
-            
+            reg_finder.Close();
             ////Fill in Reg 1 and 2
             ///
             Read_Register_1 = Convert.ToString(rt, 2);
@@ -130,14 +130,14 @@ namespace _222_web_app
             {
                 Read_Register_2 = "0" + Read_Register_2;
             }
-                
-            System.Diagnostics.Debug.WriteLine("test " + Read_Register_1);
-            System.Diagnostics.Debug.WriteLine(rs);
-
-            reg_finder.Close();
 
 
-            
+            Read_Data_1 = (rt * 10).ToString("X");
+            Read_Data_2 = (rs * 10).ToString("X");
+
+            Sign_Ext_Immediate = immediate.ToString();
+
+
         }
     }
 }
