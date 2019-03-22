@@ -30,8 +30,8 @@ ul
 	font-family:"Times New Roman",serif;
         }
         .auto-style1 {
-            width: 509px;
-            height: 414px;
+            width: 829px;
+            height: 669px;
         }
         .auto-style2 {
             height: .3in;
@@ -423,6 +423,9 @@ EN-US;mso-bidi-language:AR-SA">
     </div>
     <p class="MsoNormal">
         <o:p>&nbsp;</o:p></p>
+        <p class="MsoNormal" style="text-align: center">
+            <asp:Button ID="Submit_Answers" runat="server" OnClick="Submit_Answers_Click" Text="Submit to Grade" />
+            <o:p></o:p></p>
         <p class="MsoNormal">
             <o:p></o:p>
         </p>
