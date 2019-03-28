@@ -109,10 +109,12 @@ namespace _222_web_app
                 ////Set Correct Answer
                 ///
                 Answer ans = new Answer();
+                
+                int funct = Convert.ToInt32(operation_str[3], 16);
                 ans.Control_Signals(instruction, rs, rt, rd, shamt, operation_str[2], operation_str[3], operation_str[0], operation_str[1]);
-                ans.Data_Signal(operation_str, rs_reg, rt_reg, rd_reg, shamt, immediate, reg_file_path);
+                ans.Data_Signal(operation_str, rs_reg, rt_reg, rd_reg, shamt, immediate, funct , reg_file_path);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Instruction_html.InnerText = ex.Message;
                 System.Diagnostics.Debug.WriteLine(ex.Message);

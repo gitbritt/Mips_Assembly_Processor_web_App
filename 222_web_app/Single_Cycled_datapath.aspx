@@ -42,6 +42,14 @@ ul
             width: 1.68in;
             text-align: left;
         }
+        .auto-style4 {
+            height: .3in;
+            width: 2.04in;
+        }
+        .auto-style5 {
+            height: .3in;
+            width: 2.12in;
+        }
     </style>
 </head>
 <body>
@@ -271,17 +279,16 @@ EN-US;mso-bidi-language:AR-SA">
  mso-yfti-tbllook:480;mso-padding-alt:0in 5.4pt 0in 5.4pt;mso-border-insideh:
  .5pt solid windowtext;mso-border-insidev:.5pt solid windowtext">
             <tr style="mso-yfti-irow:0;mso-yfti-firstrow:yes;height:.3in">
-                <td style="width:1.8in;border:solid windowtext 1.0pt;border-bottom:
-  double windowtext 1.5pt;mso-border-alt:solid windowtext .5pt;mso-border-bottom-alt:
-  double windowtext 1.5pt;padding:0in 5.4pt 0in 5.4pt;height:.3in" width="173">
+                <td style="border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: 1.0pt solid windowtext; border-bottom: 1.5pt double windowtext; mso-border-alt:solid windowtext .5pt; mso-border-bottom-alt:
+  double windowtext 1.5pt; padding:0in 5.4pt 0in 5.4pt;" class="auto-style4">
                     <p align="center" class="MsoNormal">
                         <b style="mso-bidi-font-weight:normal">Data Signal<o:p></o:p></b></p>
                 </td>
-                <td style="width:2.8in;border-top:solid windowtext 1.0pt;
-  border-left:none;border-bottom:double windowtext 1.5pt;border-right:solid windowtext 1.0pt;
+                <td style="border-top:solid windowtext 1.0pt;
+  border-bottom:double windowtext 1.5pt;border-right:solid windowtext 1.0pt;
   mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
   mso-border-bottom-alt:double windowtext 1.5pt;padding:0in 5.4pt 0in 5.4pt;
-  height:.3in" width="269">
+  border-left-style: none; border-left-color: inherit; border-left-width: medium;" class="auto-style5">
                     <p align="center" class="MsoNormal">
                         <b style="mso-bidi-font-weight:normal">Value<br />
                         <i style="mso-bidi-font-style:normal">(32-bit values in Hex and<br />
@@ -289,133 +296,130 @@ EN-US;mso-bidi-language:AR-SA">
                 </td>
             </tr>
             <tr style="mso-yfti-irow:1;height:.3in">
-                <td style="width:1.8in;border:solid windowtext 1.0pt;border-top:
-  none;mso-border-top-alt:double windowtext 1.5pt;mso-border-alt:solid windowtext .5pt;
-  mso-border-top-alt:double windowtext 1.5pt;padding:0in 5.4pt 0in 5.4pt;
-  height:.3in" width="173">
+                <td style="mso-border-top-alt:double windowtext 1.5pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-bottom: 1.0pt solid windowtext; mso-border-alt:solid windowtext .5pt;
+  mso-border-top-alt:double windowtext 1.5pt; padding:0in 5.4pt 0in 5.4pt;
+  border-top-style: none; border-top-color: inherit; border-top-width: medium;" class="auto-style4">
                     <p class="MsoNormal">
-                        Read Register 1<o:p></o:p></p>
+                        Read Register 1<o:p> (Binary)</o:p></p>
                 </td>
-                <td style="width:2.8in;border-top:none;border-left:none;border-bottom:
+                <td style="border-bottom:
   solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:
   double windowtext 1.5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
   solid windowtext .5pt;mso-border-top-alt:double windowtext 1.5pt;padding:
-  0in 5.4pt 0in 5.4pt;height:.3in" width="269">
+  0in 5.4pt 0in 5.4pt; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" class="auto-style5">
                     <asp:TextBox ID="TextBox9" runat="server"></asp:TextBox>
                 </td>
             </tr>
             <tr style="mso-yfti-irow:2;height:.3in">
-                <td style="width:1.8in;border:solid windowtext 1.0pt;border-top:
-  none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
-  padding:0in 5.4pt 0in 5.4pt;height:.3in" width="173">
+                <td style="border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-bottom: 1.0pt solid windowtext; mso-border-top-alt:solid windowtext .5pt; mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt; border-top-style: none; border-top-color: inherit; border-top-width: medium;" class="auto-style4">
                     <p class="MsoNormal">
-                        Read Register 2<o:p></o:p></p>
+                        Read Register 2<o:p> (Binary)</o:p></p>
                 </td>
-                <td style="width:2.8in;border-top:none;border-left:none;border-bottom:
+                <td style="border-bottom:
   solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:
   solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
-  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;height:.3in" width="269">
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" class="auto-style5">
                     <asp:TextBox ID="TextBox10" runat="server"></asp:TextBox>
                 </td>
             </tr>
             <tr style="mso-yfti-irow:3;height:.3in">
-                <td style="width:1.8in;border:solid windowtext 1.0pt;border-top:
-  none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
-  padding:0in 5.4pt 0in 5.4pt;height:.3in" width="173">
+                <td style="border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-bottom: 1.0pt solid windowtext; mso-border-top-alt:solid windowtext .5pt; mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt; border-top-style: none; border-top-color: inherit; border-top-width: medium;" class="auto-style4">
                     <p class="MsoNormal">
-                        Write Register<o:p></o:p></p>
+                        Write Register<o:p> (Binary)</o:p></p>
                 </td>
-                <td style="width:2.8in;border-top:none;border-left:none;border-bottom:
+                <td style="border-bottom:
   solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:
   solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
-  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;height:.3in" width="269">
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" class="auto-style5">
                     <asp:TextBox ID="TextBox11" runat="server"></asp:TextBox>
                 </td>
             </tr>
             <tr style="mso-yfti-irow:4;height:.3in">
-                <td style="width:1.8in;border:solid windowtext 1.0pt;border-top:
-  none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
-  padding:0in 5.4pt 0in 5.4pt;height:.3in" width="173">
+                <td style="border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-bottom: 1.0pt solid windowtext; mso-border-top-alt:solid windowtext .5pt; mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt; border-top-style: none; border-top-color: inherit; border-top-width: medium;" class="auto-style4">
                     <p class="MsoNormal">
-                        Read Data 1<o:p></o:p></p>
+                        Read Data 1<o:p> (Hex)</o:p></p>
                 </td>
-                <td style="width:2.8in;border-top:none;border-left:none;border-bottom:
+                <td style="border-bottom:
   solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:
   solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
-  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;height:.3in" width="269">
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" class="auto-style5">
                     <p class="MsoNormal">
                         <o:p>&nbsp;<asp:TextBox ID="TextBox12" runat="server"></asp:TextBox>
                         </o:p></p>
                 </td>
             </tr>
             <tr style="mso-yfti-irow:5;height:.3in">
-                <td style="width:1.8in;border:solid windowtext 1.0pt;border-top:
-  none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
-  padding:0in 5.4pt 0in 5.4pt;height:.3in" width="173">
+                <td style="border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-bottom: 1.0pt solid windowtext; mso-border-top-alt:solid windowtext .5pt; mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt; border-top-style: none; border-top-color: inherit; border-top-width: medium;" class="auto-style4">
                     <p class="MsoNormal">
-                        Read Data 2<o:p></o:p></p>
+                        Read Data 2<o:p> (Hex)</o:p></p>
                 </td>
-                <td style="width:2.8in;border-top:none;border-left:none;border-bottom:
+                <td style="border-bottom:
   solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:
   solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
-  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;height:.3in" width="269">
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" class="auto-style5">
                     <asp:TextBox ID="TextBox13" runat="server"></asp:TextBox>
                 </td>
             </tr>
             <tr style="mso-yfti-irow:6;height:.3in">
-                <td style="width:1.8in;border:solid windowtext 1.0pt;border-top:
-  none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
-  padding:0in 5.4pt 0in 5.4pt;height:.3in" width="173">
+                <td style="border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-bottom: 1.0pt solid windowtext; mso-border-top-alt:solid windowtext .5pt; mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt; border-top-style: none; border-top-color: inherit; border-top-width: medium;" class="auto-style4">
                     <p class="MsoNormal">
-                        Sign Ext. Immediate <o:p></o:p>
-                    </p>
+                        Sign Ext. Immediate <o:p>&nbsp;(Hex)</o:p></p>
                 </td>
-                <td style="width:2.8in;border-top:none;border-left:none;border-bottom:
+                <td style="border-bottom:
   solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:
   solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
-  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;height:.3in" width="269">
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" class="auto-style5">
                     <asp:TextBox ID="TextBox14" runat="server"></asp:TextBox>
                 </td>
             </tr>
             <tr style="mso-yfti-irow:7;height:.3in">
-                <td style="width:1.8in;border:solid windowtext 1.0pt;border-top:
-  none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
-  padding:0in 5.4pt 0in 5.4pt;height:.3in" width="173">
+                <td style="border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-bottom: 1.0pt solid windowtext; mso-border-top-alt:solid windowtext .5pt; mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt; border-top-style: none; border-top-color: inherit; border-top-width: medium;" class="auto-style4">
                     <p class="MsoNormal">
-                        ALU Operation<o:p></o:p></p>
+                        ALU Operation<o:p> (Dropdown)</o:p></p>
                 </td>
-                <td style="width:2.8in;border-top:none;border-left:none;border-bottom:
+                <td style="border-bottom:
   solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:
   solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
-  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;height:.3in" width="269">
-                    <asp:TextBox ID="TextBox15" runat="server"></asp:TextBox>
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" class="auto-style5">
+                    <asp:DropDownList ID="DropDownList1" runat="server">
+                        <asp:ListItem Value="ADD"></asp:ListItem>
+                        <asp:ListItem Value="SRL"></asp:ListItem>
+                        <asp:ListItem Value="SLL"></asp:ListItem>
+                        <asp:ListItem Value="AND"></asp:ListItem>
+                        <asp:ListItem Value="OR"></asp:ListItem>
+                        <asp:ListItem Value="LESS_THAN"></asp:ListItem>
+                    </asp:DropDownList>
                 </td>
             </tr>
             <tr style="mso-yfti-irow:8;height:.3in">
-                <td style="width:1.8in;border:solid windowtext 1.0pt;border-top:
-  none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
-  padding:0in 5.4pt 0in 5.4pt;height:.3in" width="173">
+                <td style="border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-bottom: 1.0pt solid windowtext; mso-border-top-alt:solid windowtext .5pt; mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt; border-top-style: none; border-top-color: inherit; border-top-width: medium;" class="auto-style4">
                     <p class="MsoNormal">
-                        ALU Result<o:p></o:p></p>
+                        ALU Result<o:p> (Hex)</o:p></p>
                 </td>
-                <td style="width:2.8in;border-top:none;border-left:none;border-bottom:
+                <td style="border-bottom:
   solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:
   solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
-  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;height:.3in" width="269">
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" class="auto-style5">
                     <asp:TextBox ID="TextBox16" runat="server"></asp:TextBox>
                 </td>
             </tr>
             <tr style="mso-yfti-irow:9;mso-yfti-lastrow:yes;height:.3in">
-                <td style="width:1.8in;border:solid windowtext 1.0pt;border-top:
-  none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
-  padding:0in 5.4pt 0in 5.4pt;height:.3in" width="173">
+                <td style="border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-bottom: 1.0pt solid windowtext; mso-border-top-alt:solid windowtext .5pt; mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt; border-top-style: none; border-top-color: inherit; border-top-width: medium;" class="auto-style4">
                     <p class="MsoNormal">
-                        Register Write Data<o:p></o:p></p>
+                        Register Write Data<o:p> (Hex)</o:p></p>
                 </td>
-                <td style="width:2.8in;border-top:none;border-left:none;border-bottom:
+                <td style="border-bottom:
   solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:
   solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
-  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;height:.3in" width="269">
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt; border-left-style: none; border-left-color: inherit; border-left-width: medium; border-top-style: none; border-top-color: inherit; border-top-width: medium;" class="auto-style5">
                     <asp:TextBox ID="TextBox17" runat="server"></asp:TextBox>
                 </td>
             </tr>
