@@ -18,7 +18,7 @@ namespace _222_web_app
         protected void Button1_Click(object sender, EventArgs e)
         {
             //Get random function
-            try
+            //try
             {
                 string[] register_array = { "$t0", "$t1", "$t2", "$t3", "$t4", "$t5", "$t6", "$t7", "$t8", "$t9", "$s0", "$s1", "$s2", "$s3", "$s3", "$s4", "$s5", "$s6", "$s7", "$ra" };
                 int rs = 0;
@@ -113,12 +113,15 @@ namespace _222_web_app
                 int funct = Convert.ToInt32(operation_str[3], 16);
                 ans.Control_Signals(instruction, rs, rt, rd, shamt, operation_str[2], operation_str[3], operation_str[0], operation_str[1]);
                 ans.Data_Signal(operation_str, rs_reg, rt_reg, rd_reg, shamt, immediate, funct , reg_file_path);
+
+
+                
             }
-            catch (Exception ex)
-            {
-                Instruction_html.InnerText = ex.Message;
-                System.Diagnostics.Debug.WriteLine(ex.Message);
-            }
+            //catch (Exception ex)
+            //{
+            //    Instruction_html.InnerText = ex.ToString();
+            //    System.Diagnostics.Debug.WriteLine(ex.Message);
+            //}
         }
 
         protected void Submit_Answers_Click(object sender, EventArgs e)
@@ -142,6 +145,85 @@ namespace _222_web_app
             AnswerALUOperation.InnerText = Answer.ALU_Operation;
             AnswerALUResult.InnerText = Answer.ALU_Result;
             AnswerRegWriteData.InnerText = Answer.Register_Write_Data;
+            AnswerMemWriteData.InnerText = Answer.Memory_Write_Data;
+            /////Show correct or not
+            ///
+            Display_Correct_ans();
+
+        }
+
+        protected void Display_Correct_ans()
+        {
+            if (input_ALUSrc.Text == Answer.ALUSrc)
+                CorrectALUSrc.InnerText = "Yes";
+            else
+                CorrectALUSrc.InnerText = "No";
+            if (input_Branch.Text == Answer.Branch)
+                CorrectBranch.InnerText = "Yes";
+            else
+                CorrectBranch.InnerText = "No";
+            if (input_Jump.Text == Answer.Jump)
+                CorrectJump.InnerText = "Yes";
+            else
+                CorrectJump.InnerText = "No";
+            if (input_MemRead.Text == Answer.MemRead)
+                CorrectMemRead.InnerText = "Yes";
+            else
+                CorrectMemRead.InnerText = "No";
+            if (input_MemtoReg.Text == Answer.MemToReg)
+                CorrectMemtoReg.InnerText = "Yes";
+            else
+                CorrectMemtoReg.InnerText = "No";
+            if (input_MemWrite.Text == Answer.MemWrite)
+                CorrectMemWrite.InnerText = "Yes";
+            else
+                CorrectMemWrite.InnerText = "No";
+            if (Input_rd.Text == Answer.RegDst)
+                CorrectRegDst.InnerText = "Yes";
+            else
+                CorrectRegDst.InnerText = "No";
+            if (input_RegWrite.Text == Answer.RegWrite)
+                CorrectRegWrite.InnerText = "Yes";
+            else
+                CorrectRegWrite.InnerText = "No";
+            /////////////////////////////////////
+            ///
+            if (input_RR1.Text == Answer.Read_Register_1)
+                CorrectRR1.InnerText = "Yes";
+            else
+                CorrectRR1.InnerText = "No";
+            if (input_RR2.Text == Answer.Read_Register_2)
+                CorrectRR2.InnerText = "Yes";
+            else
+                CorrectRR2.InnerText = "No";
+            if (input_RWD.Text == Answer.Register_Write_Data)
+                CorrectRWD.InnerText = "Yes";
+            else
+                CorrectRWD.InnerText = "No";
+            if (input_WR.Text == Answer.Write_Register)
+                CorrectWR.InnerText = "Yes";
+            else
+                CorrectWR.InnerText = "No";
+            if (input_ALU_op.Text == Answer.ALU_Operation)
+                CorrectALUOP.InnerText = "Yes";
+            else
+                CorrectALUOP.InnerText = "No";
+            if (input_ALU_res.Text == Answer.ALU_Result)
+                CorrectALURes.InnerText = "Yes";
+            else
+                CorrectALURes.InnerText = "No";
+            if (input_RD1.Text == Answer.Read_Data_1)
+                CorrectRD1.InnerText = "Yes";
+            else
+                CorrectRD1.InnerText = "No";
+            if (input_RD2.Text == Answer.Read_Data_2)
+                CorrectRD2.InnerText = "Yes";
+            else
+                CorrectRD2.InnerText = "No";
+            if (input_imm.Text == Answer.Sign_Ext_Immediate)
+                CorrectIMM.InnerText = "Yes";
+            else
+                CorrectIMM.InnerText = "No";
         }
     }
 }

@@ -29,7 +29,8 @@ namespace _222_web_app
                 Sign_Ext_Immediate = "",
                 ALU_Operation = "",
                 ALU_Result = "",
-                Register_Write_Data = "";
+                Register_Write_Data = "",
+                Memory_Write_Data = "";
 
 
 
@@ -135,8 +136,8 @@ namespace _222_web_app
             }
 
 
-            Read_Data_1 = "0x" + (rt * 10).ToString("X8");
-            Read_Data_2 = "0x" + (rs * 10).ToString("X8");
+            Read_Data_1 = (rt * 10).ToString("X8");
+            Read_Data_2 = (rs * 10).ToString("X8");
 
             
 
@@ -147,7 +148,7 @@ namespace _222_web_app
             if (operation_str[1] == "R")
             {
                 Sign_Ext_Immediate = ((rs << 11) | (shamt << 6) | (funct)).ToString("X8");
-                Sign_Ext_Immediate = "0x" + Sign_Ext_Immediate;
+                Sign_Ext_Immediate = Sign_Ext_Immediate;
                 Write_Register = Convert.ToString(rd, 2);
 
             }
@@ -155,7 +156,7 @@ namespace _222_web_app
             { 
                 string temp = "";
                 Sign_Ext_Immediate = immediate.ToString("X8");
-                Sign_Ext_Immediate = "0x" + Sign_Ext_Immediate;
+                Sign_Ext_Immediate = Sign_Ext_Immediate;
 
                 if (operation_str[0] == "SB" || operation_str[0] == "SW")
                     temp = "0x00000000";
@@ -172,43 +173,74 @@ namespace _222_web_app
 
             ////ALU Operation
             ///
-            ALU(operation_str[0], rs, rt);
+            ALU(operation_str[0], operation_str[1], rs, rt, immediate, shamt);
 
+            if (MemToReg == "1")
+            {
+                Register_Write_Data = "0x00000000";
+                Memory_Write_Data = Read_Data_2;
+
+            }
+            else
+            {
+                Register_Write_Data = ALU_Result;
+                Memory_Write_Data = "0x00000000";
+            }
 
         }
-        public void ALU(string operation_str, int rs, int rt)
+        public void ALU(string operation_str, string type, int rs, int rt, int immediate, int shamt)
         {
             //ALU Src is add
-            if (operation_str.Substring(0, 2) == "ADD" || operation_str == "BEQ" || operation_str == "BNE" || operation_str == "JAL" || operation_str == "LUI" || operation_str == "LBU" ||
-                operation_str == "LW" || operation_str == "LB" || operation_str == "SB")
+
+            ALU_Result = "0x00000000";
+            System.Diagnostics.Debug.WriteLine("ALU op : " + operation_str);
+            if (operation_str == "ADD" || operation_str == "ADDI" || operation_str == "ADDIU" || operation_str == "ADDU" || operation_str == "BEQ" || operation_str == "BNE" || operation_str == "JAL" || operation_str == "LUI" || operation_str == "LBU" ||
+                operation_str == "LW" || operation_str == "LB" || operation_str == "SB" || operation_str =="SW")
             {
                 ALU_Operation = "ADD";
-                ALU_Result = "0x" + (rs + rt).ToString("X8");
+                if(type == "R")
+                    ALU_Result =  (rs + rt).ToString("X8");
+                else if(type == "I")
+                    ALU_Result = (rt + immediate).ToString("X8");
+                System.Diagnostics.Debug.WriteLine("ALU add src : " + ALU_Result);
             }
             //ALU Src is or
             if (operation_str == "OR" || operation_str == "ORI" || operation_str == "NOR")
             {
                 ALU_Operation = "OR";
-                ALU_Result = "0x" + (rs | rt).ToString("X8");
+                if(type == "R")
+                    ALU_Result = (rs | rt).ToString("X8");
+                else if(type == "I")
+                    ALU_Result = (immediate | rt).ToString("X8");
             }
+            if (operation_str == "AND" || operation_str == "ANDI")
+            {
+                ALU_Operation = "AND";
+                if (type == "R")
+                    ALU_Result =  (rs & rt).ToString("X8");
+                else if (type == "I")
+                    ALU_Result = (rs & immediate).ToString("X8");
+            }
+                
             //ALU is shift right log
             if(operation_str == "SRL")
             {
                 ALU_Operation = "SRL";
+                ALU_Result = (rt >> shamt).ToString("X8");
             }
             //ALU is shift left log
             if(operation_str == "SLL")
             {
                 ALU_Operation = "SLL";
+                ALU_Result =  (rt << shamt).ToString("X8");
             }
             //ALU subtract
             if (operation_str == "SUB" || operation_str == "SUBU" || operation_str == "SLT" || operation_str == "SLTI" || operation_str == "SLTIU")
             {
                 ALU_Operation = "SUB";
-                ALU_Result = (rt - rs).ToString("X8");
+                ALU_Result =  (rt - rs).ToString("X8");
             }
-            else
-                ALU_Result = "0x00000000";
+            
         }
     }
 }
