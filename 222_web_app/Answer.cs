@@ -37,28 +37,34 @@ namespace _222_web_app
         public void Control_Signals(string inst, int rs, int rt, int rd, int shamt, string op_hex_code, string hex_funct, string op_name, string type)
         {
             
-            //Determin RegDst/ALUSrc
-            if(type == "R")
+            if(type == "R")//Type R
             {
                 RegDst = "1";
                 ALUSrc = "0";
             }
-            else if(type == "I")
+                        
+            else if(type == "I")//Type I 
             {
                 RegDst = "0";
                 ALUSrc = "1";
             }
+            
             else
             {
                 RegDst = "0";
                 ALUSrc = "0";
             }
-            if (op_name == "SW" || op_name == "SB" || op_name == "SH" || op_name == "SC")
+            
+            if (op_name == "SW" || op_name == "SB" )
             {
                 MemWrite = "1";
+                RegDst = "D";
+                MemToReg = "D";
             }
             else
+            {
                 MemWrite = "0";
+            }
             if (op_name == "LW" || op_name == "LBU" || op_name == "LUBI" || op_name == "LUI")
             {
                 MemRead = "1";
@@ -68,7 +74,6 @@ namespace _222_web_app
             {
                 MemRead = "0";
                 MemToReg = "0";
-
             }
             if (op_name == "AND" || op_name == "ANDI" || op_name == "ADD" || op_name == "ADDI" || op_name == "ADDIU" || op_name == "ADDU" || op_name == "JAL" || op_name == "LBU"
                 || op_name == "LUI" || op_name == "NOR" || op_name == "OR" || op_name == "ORI" || op_name == "SLT" || op_name == "SLTI" || op_name == "SLTIU" || op_name == "SLTU"
@@ -76,30 +81,63 @@ namespace _222_web_app
             {
                 RegWrite = "1";
             }
+            if(op_name == "LUI")
+            {
+                ALUSrc = "D";
+                MemToReg = "D";
+                MemRead = "D";
+
+            }
             else
+            {
                 RegWrite = "0";
+            }
             if (op_name == "BEQ" || op_name == "BNE")
             {
-
+                RegDst = "D";
+                MemToReg = "D";
                 Branch = "1";
             }
             else
+            {
                 Branch = "0";
+            }
+            if(op_name == "JR")
+            {
+                RegDst = "D";
+                ALUSrc = "D";
+                MemToReg = "D";
+                RegWrite = "0";
+                Branch = "0";
+                MemRead = "D";
+                MemWrite = "D";
+            }
+
+            ///Type J
+            ///
             if (op_name == "J")
             {
+                RegDst = "D";
+                ALUSrc = "D";
+                MemToReg = "D";
+                RegWrite = "D";
+                MemRead = "D";
+                MemWrite = "D";
+                Branch = "D";
                 Jump = "1";
             }
             else
                 Jump = "0";
             
         }
+        
 
 
         public void Data_Signal(string [] operation_str, string rs_reg, string rt_reg, string rd_reg, int shamt, int immediate, int funct, string location)
         {
             
             
-            ////Getting the Register Numbers//////
+            ////Getting the Register Numbers from a file//////
             StreamReader reg_finder = new StreamReader(location + "Regs.csv");
             string line = "";
             int rs = 0;
@@ -158,33 +196,40 @@ namespace _222_web_app
                 Sign_Ext_Immediate = immediate.ToString("X8");
                 Sign_Ext_Immediate = Sign_Ext_Immediate;
 
-                if (operation_str[0] == "SB" || operation_str[0] == "SW")
-                    temp = "0x00000000";
+                if (RegDst != "D")
+                    Write_Register = Convert.ToString(rt, 2);
                 else
-                    temp = Convert.ToString(rt, 2);
-
-                Write_Register = temp;
+                    Write_Register = "XXXXXXXX"; //If RegDst is a don't care
             }
             else if(operation_str[1] == "J")
             {
+                Read_Register_1 = "XXXXXXXX";
+                Read_Register_2 = "XXXXXXXX";
+                Read_Data_1 = "XXXXXXXX";
+                Read_Data_2 = "XXXXXXXX";
+                Sign_Ext_Immediate = "XXXXXXXX";
+
                 Write_Register = 0.ToString("X8");
             }
-
-
             ////ALU Operation
             ///
             ALU(operation_str[0], operation_str[1], rs, rt, immediate, shamt);
 
             if (MemToReg == "1")
             {
-                Register_Write_Data = "0x00000000";
+                Register_Write_Data = "00000000";
                 Memory_Write_Data = Read_Data_2;
 
+            }
+            else if(MemToReg == "D")
+            {
+                Register_Write_Data = "00000000";
+                Memory_Write_Data = "XXXXXXXX";
             }
             else
             {
                 Register_Write_Data = ALU_Result;
-                Memory_Write_Data = "0x00000000";
+                Memory_Write_Data = "00000000";
             }
 
         }
@@ -192,7 +237,7 @@ namespace _222_web_app
         {
             //ALU Src is add
 
-            ALU_Result = "0x00000000";
+            ALU_Result = "00000000";
             System.Diagnostics.Debug.WriteLine("ALU op : " + operation_str);
             if (operation_str == "ADD" || operation_str == "ADDI" || operation_str == "ADDIU" || operation_str == "ADDU" || operation_str == "BEQ" || operation_str == "BNE" || operation_str == "JAL" || operation_str == "LUI" || operation_str == "LBU" ||
                 operation_str == "LW" || operation_str == "LB" || operation_str == "SB" || operation_str =="SW")

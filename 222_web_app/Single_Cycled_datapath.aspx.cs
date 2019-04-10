@@ -20,6 +20,7 @@ namespace _222_web_app
             //Get random function
             //try
             {
+                //List of usable registers
                 string[] register_array = { "$t0", "$t1", "$t2", "$t3", "$t4", "$t5", "$t6", "$t7", "$t8", "$t9", "$s0", "$s1", "$s2", "$s3", "$s3", "$s4", "$s5", "$s6", "$s7", "$ra" };
                 int rs = 0;
                 int rt = 0;
@@ -64,9 +65,12 @@ namespace _222_web_app
                         instruction = operation_str[0] + " " + rs_reg + ", " + rt_reg + ", " + rd_reg;
                     
                 }
-                ///Type I instructions
+                //Determins the Type of instrucions, I, R, or J
+
                 ///
-                else if(operation_str[1] =="I")
+
+                ///Type I instructions
+                else if (operation_str[1] =="I")
                 {
                     immediate = operation.Next(0, 10);
                     instruction = operation_str[0];
@@ -126,6 +130,7 @@ namespace _222_web_app
 
         protected void Submit_Answers_Click(object sender, EventArgs e)
         {
+            /////When the Button is clicked, the correct answer is generated in the back-ground and then displays the correct ones.
             Answer ans = new Answer();
             AnswerRegDst.InnerText = Answer.RegDst;
             AnswerALUSrc.InnerText = Answer.ALUSrc;
@@ -154,6 +159,10 @@ namespace _222_web_app
 
         protected void Display_Correct_ans()
         {
+            ///This determins if the student's answers is correct.
+            ///
+            ///
+            ///
             if (input_ALUSrc.Text == Answer.ALUSrc)
                 CorrectALUSrc.InnerText = "Yes";
             else

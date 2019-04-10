@@ -84,6 +84,7 @@ ul
                 <li class="MsoNormal" style="mso-list:l0 level1 lfo1;tab-stops:list .5in">Every register has the initial value 10<sub>ten</sub> <b style="mso-bidi-font-weight:
      normal"><i style="mso-bidi-font-style:normal">times</i></b> the register number.<o:p></o:p></li>
                 <li class="MsoNormal" style="mso-list:l0 level1 lfo1;tab-stops:list .5in">Every memory word accessed as data has the initial value 0x1000 <b style="mso-bidi-font-weight:normal"><i style="mso-bidi-font-style:normal">plus</i></b> the byte address of the word.<o:p></o:p></li>
+                <li class="MsoNormal" style="mso-list:l0 level1 lfo1;tab-stops:list .5in">Remember the <strong>&quot;Don&#39;t Care</strong><o:p>s<strong>&quot;</strong></o:p></li>
             </ul>
             <span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif;
 mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN-US;mso-fareast-language:
