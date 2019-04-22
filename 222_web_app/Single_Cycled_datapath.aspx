@@ -499,6 +499,7 @@ EN-US;mso-bidi-language:AR-SA">
                         <asp:ListItem Value="AND"></asp:ListItem>
                         <asp:ListItem Value="OR"></asp:ListItem>
                         <asp:ListItem Value="LESS_THAN"></asp:ListItem>
+                        <asp:ListItem>Jump</asp:ListItem>
                     </asp:DropDownList>
                 </td>
                 <td style="border-bottom:

@@ -41,6 +41,7 @@ namespace _222_web_app
             ALUSrc = "0";
             MemToReg = "0";
             RegWrite = "0";
+            MemRead = "0";
             MemWrite = "0";
             Branch = "0";
             Jump = "0";
@@ -49,10 +50,11 @@ namespace _222_web_app
             {
                 RegDst = "1";
             }
-            else if (op_name == "SW" || op_name == "SB")
+            else if (op_name == "SW" || op_name == "SB" || op_name == "BEQ" || op_name == "BNE")
             {
                 RegDst = "D";
             }
+            
             else if(type == "I")//Type I 
             {
                 ALUSrc = "1";
@@ -62,89 +64,46 @@ namespace _222_web_app
                 ALUSrc = "D";
             }
             
+            if(op_name == "LW" || op_name == "LB")
+            {
+                MemToReg = "1";
+            }
+            else if (op_name == "SW" || op_name == "SB" || op_name == "BEQ" || op_name == "BNE")
+            {
+                MemToReg = "D";
+            }
 
-            //else
-            //{
-            //    RegDst = "0";
-            //    ALUSrc = "0";
-            //}
+            if (op_name == "AND" || op_name == "ANDI" || op_name == "ADD" || op_name == "ADDI" || op_name == "ADDIU" || op_name == "ADDU" || op_name == "JAL" || op_name == "LBU"
+                    || op_name == "LUI" || op_name == "NOR" || op_name == "OR" || op_name == "ORI" || op_name == "SLT" || op_name == "SLTI" || op_name == "SLTIU" || op_name == "SLTU"
+                    || op_name == "SLL" || op_name == "SRL" || op_name == "SUBU" || op_name == "SUB" || op_name == "LW")
+            {
+                RegWrite = "1";
+            }
 
-                //if (op_name == "SW" || op_name == "SB" )
-                //{
-                //    MemWrite = "1";
-                //    RegDst = "D";
-                //    MemToReg = "D";
-                //}
-                //else
-                //{
-                //    MemWrite = "0";
-                //}
-                //if (op_name == "LW" || op_name == "LBU" || op_name == "LUBI" || op_name == "LUI")
-                //{
-                //    MemRead = "1";
-                //    MemToReg = "1";
-                //}
-                //    else
-                //{
-                //    MemRead = "0";
-                //    MemToReg = "0";
-                //}
-                //if (op_name == "AND" || op_name == "ANDI" || op_name == "ADD" || op_name == "ADDI" || op_name == "ADDIU" || op_name == "ADDU" || op_name == "JAL" || op_name == "LBU"
-                //    || op_name == "LUI" || op_name == "NOR" || op_name == "OR" || op_name == "ORI" || op_name == "SLT" || op_name == "SLTI" || op_name == "SLTIU" || op_name == "SLTU"
-                //    || op_name == "SLL" || op_name == "SRL" || op_name == "SUBU" || op_name == "SUB")
-                //{
-                //    RegWrite = "1";
-                //    System.Diagnostics.Debug.WriteLine(RegWrite);
-                //}
-                //if(op_name == "LUI")
-                //{
-                //    ALUSrc = "D";
-                //    MemToReg = "D";
-                //    MemRead = "D";
+            if(op_name == "LW" || op_name == "LB")
+            {
+                MemRead = "1";
+            }
 
-                //}
-                //else
-                //{
-                //    //RegWrite = "0";
-                //}
-                //if (op_name == "BEQ" || op_name == "BNE")
-                //{
-                //    RegDst = "D";
-                //    MemToReg = "D";
-                //    Branch = "1";
-                //}
-                //else
-                //{
-                //    Branch = "0";
-                //}
-                //if(op_name == "JR")
-                //{
-                //    RegDst = "D";
-                //    ALUSrc = "D";
-                //    MemToReg = "D";
-                //    RegWrite = "0";
-                //    Branch = "0";
-                //    MemRead = "D";
-                //    MemWrite = "D";
-                //}
+            if(op_name == "SW" || op_name == "SB")
+            {
+                MemWrite = "1";
+            }
+            if (op_name == "BEQ" || op_name == "BNE")
+            {
+                Branch = "1";
+            }
 
-                /////Type J
-                /////
-                //if (op_name == "J")
-                //{
-                //    RegDst = "D";
-                //    ALUSrc = "D";
-                //    MemToReg = "D";
-                //    RegWrite = "D";
-                //    MemRead = "D";
-                //    MemWrite = "D";
-                //    Branch = "D";
-                //    Jump = "1";
-                //}
-                //else
-                //    Jump = "0";
+            if (op_name == "J")
+            {
+                RegDst = "D";
+                ALUSrc = "D";
+                MemToReg = "D";
+                MemRead = "D";
+                Jump = "1";
+            }
 
-        }
+            }
         
 
 
@@ -178,7 +137,7 @@ namespace _222_web_app
             ///
             
             Read_Register_1 = rt.ToString("X5");
-            Read_Register_2 = rt.ToString("X5");
+            Read_Register_2 = rs.ToString("X5");
 
 
             Read_Data_1 = (rt * 10).ToString("X8");
