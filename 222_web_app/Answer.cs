@@ -54,17 +54,21 @@ namespace _222_web_app
             {
                 RegDst = "D";
             }
+            else if(type == "J")
+            {
+                RegDst = "D";
+            }
             
-            else if(type == "I")//Type I 
+            if(type == "I")//Type I 
             {
                 ALUSrc = "1";
             }
-            else if (op_name == "SW" || op_name == "SB")
+            else if(type == "J")
             {
                 ALUSrc = "D";
             }
             
-            if(op_name == "LW" || op_name == "LB")
+            if(op_name == "LW" || op_name == "LBU")
             {
                 MemToReg = "1";
             }
@@ -80,7 +84,7 @@ namespace _222_web_app
                 RegWrite = "1";
             }
 
-            if(op_name == "LW" || op_name == "LB")
+            if(op_name == "LW" || op_name == "LBU")
             {
                 MemRead = "1";
             }
@@ -96,10 +100,6 @@ namespace _222_web_app
 
             if (op_name == "J")
             {
-                RegDst = "D";
-                ALUSrc = "D";
-                MemToReg = "D";
-                MemRead = "D";
                 Jump = "1";
             }
 
@@ -107,7 +107,7 @@ namespace _222_web_app
         
 
 
-        public void Data_Signal(string [] operation_str, string rs_reg, string rt_reg, string rd_reg, int shamt, int immediate, int funct, string location)
+        public void Data_Signal(string [] operation_str, string rs_reg, string rt_reg, string rd_reg, int shamt, int immediate, int funct, string location, string jump_addr)
         {
             
             
@@ -143,6 +143,7 @@ namespace _222_web_app
             Read_Data_1 = (rt * 10).ToString("X8");
             Read_Data_2 = (rs * 10).ToString("X8");
 
+
             
             string binary_hex = funct.ToString();
             funct = Convert.ToInt32(binary_hex, 16);
@@ -150,16 +151,23 @@ namespace _222_web_app
 
             if (operation_str[1] == "R")
             {
-                Sign_Ext_Immediate = ((rs << 11) | (shamt << 6) | (funct)).ToString("X8");
+                Sign_Ext_Immediate = ((rd << 11) | (shamt << 6) | (funct)).ToString("X8");
                 Sign_Ext_Immediate = Sign_Ext_Immediate;
                 Write_Register = Convert.ToString(rd, 2);
-
+                if(operation_str[0] == "SLL" || operation_str[0] == "SRL")
+                {
+                    //Read_Data_1 = (rd * 10).ToString("X8");
+                    //Read_Data_2 = (rt * 10).ToString("X8");
+                }
             }
             else if (operation_str[1] == "I")
             { 
                 string temp = "";
                 Sign_Ext_Immediate = immediate.ToString("X8");
                 Sign_Ext_Immediate = Sign_Ext_Immediate;
+
+                //Read_Data_1 = (rd * 10).ToString("X8");
+                //Read_Data_2 = (rt * 10).ToString("X8");
 
                 if (RegDst != "D")
                     Write_Register = Convert.ToString(rt, 2);
@@ -168,14 +176,31 @@ namespace _222_web_app
             }
             else if(operation_str[1] == "J")
             {
-                Read_Register_1 = "XXXXXXXX";
-                Read_Register_2 = "XXXXXXXX";
-                Read_Data_1 = "XXXXXXXX";
-                Read_Data_2 = "XXXXXXXX";
-                Sign_Ext_Immediate = "XXXXXXXX";
+                //Help avoid exception issue
+                System.Diagnostics.Debug.WriteLine("testing  : " + jump_addr);
 
-                Write_Register = 0.ToString("X8");
+                string jump_bin_addr = Convert.ToString(Convert.ToInt64(jump_addr, 16), 2).PadLeft(32, '0'); ;
+                System.Diagnostics.Debug.WriteLine("testing  : " + jump_bin_addr + ", " + jump_bin_addr.Length);
+
+                
+                Read_Register_1 = jump_bin_addr.Substring(6, 5);
+                Read_Register_2 = jump_bin_addr.Substring(11, 5);
+
+                int temp1 = Convert.ToInt32(Read_Register_1, 16) * 10;
+                int temp2 = Convert.ToInt32(Read_Register_2, 16) * 10;
+                System.Diagnostics.Debug.WriteLine(temp1 + ", " + temp2);
+                Read_Data_1 = temp1.ToString("X8");
+                Read_Data_2 = temp2.ToString("X8");
+
+                Sign_Ext_Immediate = jump_bin_addr.Substring(16, jump_bin_addr.Length - 16);
+                Write_Register = "XXXXXXXX";
             }
+
+            if (operation_str[0] == "SLL" || operation_str[0] == "SRL")
+            {
+
+            }
+
             ////ALU Operation
             ///
             ALU(operation_str[0], operation_str[1], rs, rt, immediate, shamt);

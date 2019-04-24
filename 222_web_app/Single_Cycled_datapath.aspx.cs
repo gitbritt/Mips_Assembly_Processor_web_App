@@ -18,7 +18,7 @@ namespace _222_web_app
         protected void Button1_Click(object sender, EventArgs e)
         {
             //Get random function
-            //try
+            try
             {
                 //List of usable registers
                 string[] register_array = { "$t0", "$t1", "$t2", "$t3", "$t4", "$t5", "$t6", "$t7", "$t8", "$t9", "$s0", "$s1", "$s2", "$s3", "$s3", "$s4", "$s5", "$s6", "$s7", "$ra" };
@@ -116,16 +116,16 @@ namespace _222_web_app
                 
                 int funct = Convert.ToInt32(operation_str[3], 16);
                 ans.Control_Signals(instruction, rs, rt, rd, shamt, operation_str[2], operation_str[3], operation_str[0], operation_str[1]);
-                ans.Data_Signal(operation_str, rs_reg, rt_reg, rd_reg, shamt, immediate, funct , reg_file_path);
+                ans.Data_Signal(operation_str, rs_reg, rt_reg, rd_reg, shamt, immediate, funct , reg_file_path, hex_address);
 
 
                 
             }
-            //catch (Exception ex)
-            //{
-            //    Instruction_html.InnerText = ex.ToString();
-            //    System.Diagnostics.Debug.WriteLine(ex.Message);
-            //}
+            catch (Exception ex)
+            {
+                Instruction_html.InnerText = ex.ToString();
+                System.Diagnostics.Debug.WriteLine(ex.Message);
+            }
         }
 
         protected void Submit_Answers_Click(object sender, EventArgs e)
