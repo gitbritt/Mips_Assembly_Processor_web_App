@@ -77,9 +77,9 @@ namespace _222_web_app
                 MemToReg = "D";
             }
 
-            if (op_name == "AND" || op_name == "ANDI" || op_name == "ADD" || op_name == "ADDI" || op_name == "ADDIU" || op_name == "ADDU" || op_name == "JAL" || op_name == "LBU"
+            if (op_name == "AND" || op_name == "ANDI" || op_name == "ADD" || op_name == "ADDI" || op_name == "ADDIU" || op_name == "ADDU" || op_name == "JAL" || op_name == "LBU" || op_name == "LW"
                     || op_name == "LUI" || op_name == "NOR" || op_name == "OR" || op_name == "ORI" || op_name == "SLT" || op_name == "SLTI" || op_name == "SLTIU" || op_name == "SLTU"
-                    || op_name == "SLL" || op_name == "SRL" || op_name == "SUBU" || op_name == "SUB" || op_name == "LW")
+                    || op_name == "SLL" || op_name == "SRL" || op_name == "SUBU" || op_name == "SUB" || op_name == "SUBI" )
             {
                 RegWrite = "1";
             }
@@ -164,7 +164,7 @@ namespace _222_web_app
             { 
                 string temp = "";
                 Sign_Ext_Immediate = immediate.ToString("X8");
-                Sign_Ext_Immediate = Sign_Ext_Immediate;
+                
 
                 //Read_Data_1 = (rd * 10).ToString("X8");
                 //Read_Data_2 = (rt * 10).ToString("X8");
@@ -176,12 +176,10 @@ namespace _222_web_app
             }
             else if(operation_str[1] == "J")
             {
-                //Help avoid exception issue
-                System.Diagnostics.Debug.WriteLine("testing  : " + jump_addr);
+                
+                
 
                 string jump_bin_addr = Convert.ToString(Convert.ToInt64(jump_addr, 16), 2).PadLeft(32, '0'); ;
-                System.Diagnostics.Debug.WriteLine("testing  : " + jump_bin_addr + ", " + jump_bin_addr.Length);
-
                 
                 Read_Register_1 = jump_bin_addr.Substring(6, 5);
                 Read_Register_2 = jump_bin_addr.Substring(11, 5);
@@ -202,25 +200,29 @@ namespace _222_web_app
             }
 
             ////ALU Operation
-            ///
+            
             ALU(operation_str[0], operation_str[1], rs, rt, immediate, shamt);
+
+            Memory_Write_Data = Read_Data_2;
 
             if (MemToReg == "1")
             {
-                Register_Write_Data = "00000000";
-                Memory_Write_Data = Read_Data_2;
-
+                int Read_Data = (Convert.ToInt32(ALU_Result, 16)) + 4096;///ALU Result +  + 0x1000
+                Register_Write_Data = Read_Data.ToString("X8");
+            }
+            else if(MemToReg == "0")
+            {
+                Register_Write_Data = ALU_Result;
             }
             else if(MemToReg == "D")
             {
-                Register_Write_Data = "00000000";
-                Memory_Write_Data = "XXXXXXXX";
+                Register_Write_Data = "XXXXXXXX";
             }
-            else
-            {
-                Register_Write_Data = ALU_Result;
-                Memory_Write_Data = "00000000";
-            }
+            //else
+            //{
+            //    Register_Write_Data = ALU_Result;
+            //    Memory_Write_Data = "00000000";
+            //}
 
         }
         public void ALU(string operation_str, string type, int rs, int rt, int immediate, int shamt)
@@ -270,7 +272,7 @@ namespace _222_web_app
                 ALU_Result =  (rt << shamt).ToString("X8");
             }
             //ALU subtract
-            if (operation_str == "SUB" || operation_str == "SUBU" || operation_str == "SLT" || operation_str == "SLTI" || operation_str == "SLTIU")
+            if (operation_str == "SUB" || operation_str == "SUBU" || operation_str == "SLT" || operation_str == "SLTI" || operation_str == "SLTIU" || operation_str == "SUBI")
             {
                 ALU_Operation = "SUB";
                 ALU_Result =  (rt - rs).ToString("X8");
