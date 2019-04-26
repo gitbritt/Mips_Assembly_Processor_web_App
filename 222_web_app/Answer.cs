@@ -133,13 +133,14 @@ namespace _222_web_app
                 
             }
             reg_finder.Close();
+
             ////Fill in Reg 1 and 2
             ///
             
             Read_Register_1 = rt.ToString("X5");
             Read_Register_2 = rs.ToString("X5");
 
-
+            //Read Data 1, 2
             Read_Data_1 = (rt * 10).ToString("X8");
             Read_Data_2 = (rs * 10).ToString("X8");
 
@@ -152,13 +153,8 @@ namespace _222_web_app
             if (operation_str[1] == "R")
             {
                 Sign_Ext_Immediate = ((rd << 11) | (shamt << 6) | (funct)).ToString("X8");
-                Sign_Ext_Immediate = Sign_Ext_Immediate;
                 Write_Register = Convert.ToString(rd, 2);
-                if(operation_str[0] == "SLL" || operation_str[0] == "SRL")
-                {
-                    //Read_Data_1 = (rd * 10).ToString("X8");
-                    //Read_Data_2 = (rt * 10).ToString("X8");
-                }
+                
             }
             else if (operation_str[1] == "I")
             { 
@@ -166,8 +162,7 @@ namespace _222_web_app
                 Sign_Ext_Immediate = immediate.ToString("X8");
                 
 
-                //Read_Data_1 = (rd * 10).ToString("X8");
-                //Read_Data_2 = (rt * 10).ToString("X8");
+                
 
                 if (RegDst != "D")
                     Write_Register = Convert.ToString(rt, 2);
@@ -218,11 +213,7 @@ namespace _222_web_app
             {
                 Register_Write_Data = "XXXXXXXX";
             }
-            //else
-            //{
-            //    Register_Write_Data = ALU_Result;
-            //    Memory_Write_Data = "00000000";
-            //}
+            
 
         }
         public void ALU(string operation_str, string type, int rs, int rt, int immediate, int shamt)
@@ -238,7 +229,7 @@ namespace _222_web_app
                 if(type == "R")
                     ALU_Result =  (rs + rt).ToString("X8");
                 else if(type == "I")
-                    ALU_Result = (rt + immediate).ToString("X8");
+                    ALU_Result = (rs + immediate).ToString("X8");
                 System.Diagnostics.Debug.WriteLine("ALU add src : " + ALU_Result);
             }
             //ALU Src is or
@@ -248,7 +239,7 @@ namespace _222_web_app
                 if(type == "R")
                     ALU_Result = (rs | rt).ToString("X8");
                 else if(type == "I")
-                    ALU_Result = (immediate | rt).ToString("X8");
+                    ALU_Result = (immediate | rs).ToString("X8");
             }
             if (operation_str == "AND" || operation_str == "ANDI")
             {
@@ -275,7 +266,7 @@ namespace _222_web_app
             if (operation_str == "SUB" || operation_str == "SUBU" || operation_str == "SLT" || operation_str == "SLTI" || operation_str == "SLTIU" || operation_str == "SUBI")
             {
                 ALU_Operation = "SUB";
-                ALU_Result =  (rt - rs).ToString("X8");
+                ALU_Result =  (rs - rt).ToString("X8");
             }
             
         }

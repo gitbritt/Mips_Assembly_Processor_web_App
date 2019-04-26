@@ -31,7 +31,7 @@ namespace _222_web_app
                 int address = 0;
                 int Branch_Address = 0;
                 Random operation = new Random();
-                int operation_row_file = operation.Next(2, 27);
+                int operation_row_file = operation.Next(2, 27);     //This is how many instructions you want loaded from the CSV file.
                 string home_path = Server.MapPath("/").ToString();
                 string reg_file_path = home_path + "/Register_file/";
                 string row = File.ReadLines(reg_file_path + "instructions.csv").Skip(operation_row_file - 1).Take(1).First();
